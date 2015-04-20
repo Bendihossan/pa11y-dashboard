@@ -115,6 +115,7 @@ describe('POST /new', function () {
 				body: {
 					name: 'Example',
 					url: 'http://example.com/',
+					timeout: 30000,
 					standard: 'WCAG2AA'
 				}
 			};

@@ -39,6 +39,7 @@ function route (app) {
 		var newTask = {
 			name: req.body.name,
 			url: req.body.url,
+			timeout: req.body.timeout,
 			standard: req.body.standard,
 			ignore: req.body.ignore || []
 		};

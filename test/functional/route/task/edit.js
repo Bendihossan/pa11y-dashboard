@@ -57,6 +57,13 @@ describe('GET /<task-id>/edit', function () {
 			assert.strictEqual(field.getAttribute('value'), 'NPG Home');
 		});
 
+		it('should have a "timeout" field', function () {
+			var field = this.form.querySelectorAll('input[name=timeout]')[0];
+			assert.isDefined(field);
+			assert.strictEqual(field.getAttribute('type'), 'text');
+			assert.strictEqual(field.getAttribute('value'), '30000');
+		});
+
 		it('should have a disabled "url" field', function () {
 			var field = this.form.querySelectorAll('input[name=url]')[0];
 			assert.isDefined(field);
@@ -89,6 +96,7 @@ describe('POST /<task-id>/edit', function () {
 			endpoint: '/abc000000000000000000001/edit',
 			body: {
 				name: 'foo',
+				timeout: 30000,
 				ignore: ['bar', 'baz']
 			}
 		};
@@ -102,6 +110,7 @@ describe('POST /<task-id>/edit', function () {
 	it('should edit the task', function (done) {
 		this.webservice.task('abc000000000000000000001').get({}, function (err, task) {
 			assert.strictEqual(task.name, 'foo');
+			assert.strictEqual(task.timeout, 30000);
 			assert.deepEqual(task.ignore, ['bar', 'baz']);
 			done();
 		});

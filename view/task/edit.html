@@ -66,6 +66,15 @@ along with pa11y-dashboard.  If not, see <http://www.gnu.org/licenses/>.
 
 	<div class="form-group clearfix">
 		<div class="row">
+			<div class="col-md-8 col-sm-8 col-xs-10">
+				<label class="control-label" for="new-task-timeout">Timeout (ms)</label>
+				<input class="form-control" id="new-task-timeout" type="text" placeholder="30000" name="timeout" value="{{task.timeout}}"/>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group clearfix">
+		<div class="row">
 			<div class="col-md-4 col-sm-4 col-xs-6">
 				<label class="control-label" for="new-task-standard">Standard</label>
 				<select data-role="new-task-select" class="form-control" id="new-task-standard" name="standard" disabled>
